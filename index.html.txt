@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tour Tracker | Smart Travel Planning</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="landing-page">
+
+<!-- NAVBAR -->
+
+<header class="landing-header">
+
+<nav class="landing-navbar">
+
+<div class="landing-logo">
+🌍 <span>Tour</span>Tracker
+</div>
+
+<div class="landing-links">
+<a href="#home">Home</a>
+<a href="#features">Features</a>
+<a href="#about">About</a>
+<a href="login.html" class="landing-login">Login</a>
+</div>
+
+</nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="landing-hero" id="home">
+
+<div class="hero-content">
+
+<div class="hero-badge">
+✈️ SMART TRAVEL MANAGEMENT SYSTEM
+</div>
+
+<h1>
+Plan Your Journey.<br>
+<span>Track Every Adventure.</span>
+</h1>
+
+<p>
+Plan trips, manage your budget, organize packing,
+track your journey and save your favourite travel memories
+—all in one smart platform.
+</p>
+
+<div class="hero-buttons">
+
+<a href="login.html" class="primary-btn">
+🚀 Start Your Journey
+</a>
+
+<a href="#features" class="secondary-btn">
+Explore Features ↓
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-visual">
+
+<div class="floating-card card-one">
+📍 <strong>Smart Planning</strong>
+<small>Plan your perfect trip</small>
+</div>
+
+<div class="globe">
+🌍
+</div>
+
+<div class="floating-card card-two">
+💰 <strong>Budget Tracking</strong>
+<small>Control your expenses</small>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- STATS -->
+
+<section class="landing-stats">
+
+<div>
+<strong>8+</strong>
+<span>Smart Tools</span>
+</div>
+
+<div>
+<strong>24/7</strong>
+<span>Travel Planning</span>
+</div>
+
+<div>
+<strong>100%</strong>
+<span>Journey Tracking</span>
+</div>
+
+<div>
+<strong>1</strong>
+<span>Smart Platform</span>
+</div>
+
+</section>
+
+
+<!-- FEATURES -->
+
+<section class="landing-features" id="features">
+
+<div class="landing-section-title">
+
+<p>SMART FEATURES</p>
+
+<h2>
+Everything You Need For Your Journey
+</h2>
+
+<span>
+A complete travel management experience designed for smarter planning.
+</span>
+
+</div>
+
+
+<div class="feature-grid">
+
+<div class="landing-feature-card">
+<div class="feature-icon">🤖</div>
+<h3>Smart Recommendations</h3>
+<p>Get destination suggestions based on your budget, duration and travel preference.</p>
+</div>
+
+
+<div class="landing-feature-card">
+<div class="feature-icon">💰</div>
+<h3>Budget Analyzer</h3>
+<p>Track travel, hotel, food and activity expenses in one place.</p>
+</div>
+
+
+<div class="landing-feature-card">
+<div class="feature-icon">📅</div>
+<h3>Trip Planner</h3>
+<p>Create a simple day-wise itinerary for your journey.</p>
+</div>
+
+
+<div class="landing-feature-card">
+<div class="feature-icon">🎒</div>
+<h3>Smart Packing</h3>
+<p>Track your packing progress before starting your trip.</p>
+</div>
+
+
+<div class="landing-feature-card">
+<div class="feature-icon">🛡️</div>
+<h3>Travel Safety</h3>
+<p>Check your preparation with a smart safety readiness score.</p>
+</div>
+
+
+<div class="landing-feature-card">
+<div class="feature-icon">📊</div>
+<h3>Travel Analytics</h3>
+<p>View your trips, expenses, achievements and travel progress.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="landing-about" id="about">
+
+<div class="about-visual">
+<div class="about-circle">
+🗺️
+</div>
+</div>
+
+
+<div class="about-content">
+
+<p class="about-label">
+ABOUT TOUR TRACKER
+</p>
+
+<h2>
+Your Complete Travel Companion
+</h2>
+
+<p>
+Tour Tracker is a smart travel planning and journey management
+system that brings important travel activities together in one
+easy-to-use dashboard.
+</p>
+
+<div class="about-points">
+
+<div>
+✓ Plan your trips
+</div>
+
+<div>
+✓ Manage your travel budget
+</div>
+
+<div>
+✓ Track your journey progress
+</div>
+
+<div>
+✓ Save your travel memories
+</div>
+
+</div>
+
+<a href="login.html" class="primary-btn">
+Start Planning →
+</a>
+
+</div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="landing-cta">
+
+<div>
+
+<p>READY FOR YOUR NEXT ADVENTURE?</p>
+
+<h2>
+Your Journey Starts Here. ✈️
+</h2>
+
+<span>
+Plan smarter. Travel better. Create unforgettable memories.
+</span>
+
+</div>
+
+<a href="login.html" class="cta-btn">
+Get Started 🚀
+</a>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="landing-footer">
+
+<div class="landing-logo">
+🌍 <span>Tour</span>Tracker
+</div>
+
+<p>
+Smart Travel Planning & Journey Management System
+</p>
+
+<p>
+© 2026 Tour Tracker | College Project
+</p>
+
+</footer>
+
+</body>
+</html>

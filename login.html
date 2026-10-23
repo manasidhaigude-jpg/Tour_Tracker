@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - Tour Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login-page">
+
+    <div class="login-wrapper">
+
+        <!-- LEFT SIDE -->
+        <div class="login-welcome">
+
+            <div class="welcome-content">
+
+                <div class="big-globe">🌍</div>
+
+                <h1>Explore The World</h1>
+
+                <p>
+                    Plan your trips, discover beautiful destinations
+                    and keep every journey organized with
+                    <strong>Tour Tracker.</strong>
+                </p>
+
+                <div class="travel-points">
+                    <span>✈️ Smart Planning</span>
+                    <span>🗺️ Track Journeys</span>
+                    <span>📸 Save Memories</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+        <div class="login-box">
+
+            <div class="login-icon">
+                ✈️
+            </div>
+
+            <h2>Welcome Back!</h2>
+
+            <p class="login-subtitle">
+                Login to continue your journey
+            </p>
+
+
+            <form onsubmit="loginUser(event)">
+
+                <label>Email</label>
+
+                <div class="input-box">
+                    <span>📧</span>
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required>
+                </div>
+
+
+                <label>Password</label>
+
+                <div class="input-box">
+                    <span>🔒</span>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        required>
+
+                    <button
+                        type="button"
+                        class="show-password"
+                        onclick="togglePassword()">
+                        👁️
+                    </button>
+                </div>
+
+
+                <div class="login-options">
+
+                    <label class="remember">
+                        <input type="checkbox">
+                        Remember me
+                    </label>
+
+                    <a href="#">Forgot Password?</a>
+
+                </div>
+
+
+                <button type="submit" class="login-submit">
+                    Login →
+                </button>
+
+            </form>
+
+
+            <div class="or-line">
+                <span></span>
+                OR
+                <span></span>
+            </div>
+
+
+            <button class="google-btn">
+                🌐 Continue with Google
+            </button>
+
+
+            <p class="create-account">
+                Don't have an account?
+                <a href="#">Create Account</a>
+            </p>
+
+
+            <a href="index.html" class="back-home">
+                ← Back to Home
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        function loginUser(event) {
+
+            event.preventDefault();
+
+            let email =
+                document.getElementById("email").value.trim();
+
+            let password =
+                document.getElementById("password").value.trim();
+
+            if (email === "" || password === "") {
+
+                alert("Please enter Email and Password");
+                return;
+
+            }
+
+            localStorage.setItem(
+                "tourLoggedIn",
+                "true"
+            );
+
+            window.location.href = "home.html";
+        }
+
+
+        function togglePassword() {
+
+            let password =
+                document.getElementById("password");
+
+            if (password.type === "password") {
+
+                password.type = "text";
+
+            } else {
+
+                password.type = "password";
+
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

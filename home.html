@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tour Tracker - Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-page">
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="dashboard-nav">
+
+    <div class="brand">
+        🌍 <span>Tour Tracker</span>
+    </div>
+
+    <div class="nav-links">
+        <a href="#dashboard">Dashboard</a>
+        <a href="#planner">Planner</a>
+        <a href="#trips">My Trips</a>
+        <a href="#journal">Journal</a>
+    </div>
+
+    <div class="nav-actions">
+
+        <button class="theme-btn" onclick="toggleTheme()">
+            🌙
+        </button>
+
+        <button class="logout-btn" onclick="logout()">
+            Logout
+        </button>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="dashboard-hero" id="dashboard">
+
+    <div class="hero-text">
+
+        <span class="dashboard-tag">
+            SMART TRAVEL DASHBOARD
+        </span>
+
+        <h1>
+            Plan Better.<br>
+            <span>Travel Smarter.</span>
+        </h1>
+
+        <p>
+            Manage your trips, budget, packing,
+            safety and travel memories — all in one place.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#planner" class="primary-btn">
+                🚀 Start Planning
+            </a>
+
+            <a href="#trips" class="secondary-btn">
+                🗺️ View My Trips
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="travel-visual">
+
+        <div class="globe-circle">
+            🌍
+        </div>
+
+        <div class="floating-card card-one">
+            ✈️ Trips
+        </div>
+
+        <div class="floating-card card-two">
+            💰 Budget
+        </div>
+
+        <div class="floating-card card-three">
+            🎒 Ready
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= QUICK STATS ================= -->
+
+<section class="stats-section">
+
+    <div class="stat-card">
+
+        <div class="stat-icon">🗺️</div>
+
+        <div>
+            <p>Total Trips</p>
+            <h2 id="tripCount">0</h2>
+        </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon">💰</div>
+
+        <div>
+            <p>Total Expense</p>
+            <h2 id="totalExpense">₹0</h2>
+        </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon">📸</div>
+
+        <div>
+            <p>Memories</p>
+            <h2 id="memoryCount">0</h2>
+        </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon">🏆</div>
+
+        <div>
+            <p>Travel Score</p>
+            <h2 id="travelScore">0</h2>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SMART PLANNER ================= -->
+
+<section class="dashboard-section" id="planner">
+
+    <div class="section-heading">
+
+        <span>SMART PLANNER</span>
+
+        <h2>Plan Your Perfect Journey</h2>
+
+        <p>
+            Use smart tools to prepare your next adventure.
+        </p>
+
+    </div>
+
+
+    <div class="smart-grid">
+
+
+        <!-- DESTINATION -->
+
+        <div class="dashboard-card">
+
+            <div class="card-icon">
+                🏝️
+            </div>
+
+            <h3>Smart Destination</h3>
+
+            <p>
+                Find a destination according to
+                your budget and travel style.
+            </p>
+
+
+            <input
+                type="number"
+                id="travelBudget"
+                placeholder="Budget ₹"
+            >
+
+            <input
+                type="number"
+                id="travelDays"
+                placeholder="Number of Days"
+            >
+
+
+            <select id="travelType">
+
+                <option value="">
+                    Select Travel Type
+                </option>
+
+                <option value="nature">
+                    🌿 Nature
+                </option>
+
+                <option value="adventure">
+                    🏔️ Adventure
+                </option>
+
+                <option value="culture">
+                    🏰 Culture
+                </option>
+
+                <option value="relax">
+                    🌊 Relax
+                </option>
+
+            </select>
+
+
+            <button onclick="recommendDestination()">
+                Find Destination →
+            </button>
+
+
+            <div
+                id="recommendationResult"
+                class="result-box">
+            </div>
+
+        </div>
+
+
+        <!-- BUDGET -->
+
+        <div class="dashboard-card">
+
+            <div class="card-icon">
+                💰
+            </div>
+
+            <h3>Smart Budget Analyzer</h3>
+
+            <p>
+                Estimate your complete travel expense.
+            </p>
+
+
+            <input
+                type="number"
+                id="transportCost"
+                placeholder="Transport ₹"
+            >
+
+            <input
+                type="number"
+                id="hotelCost"
+                placeholder="Hotel ₹"
+            >
+
+            <input
+                type="number"
+                id="foodCost"
+                placeholder="Food ₹"
+            >
+
+            <input
+                type="number"
+                id="activityCost"
+                placeholder="Activities ₹"
+            >
+
+
+            <button onclick="calculateBudget()">
+                Calculate Budget →
+            </button>
+
+
+            <div
+                id="budgetResult"
+                class="result-box">
+            </div>
+
+        </div>
+
+
+        <!-- ADVENTURE -->
+
+        <div class="dashboard-card adventure-card">
+
+            <div class="card-icon">
+                🎲
+            </div>
+
+            <h3>Random Adventure</h3>
+
+            <p>
+                Get a random activity idea for
+                your next journey.
+            </p>
+
+
+            <div
+                id="adventureResult"
+                class="adventure-result">
+                ✨ Your adventure awaits...
+            </div>
+
+
+            <button onclick="randomAdventure()">
+                🎲 Generate Adventure
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= READINESS ================= -->
+
+<section class="dashboard-section">
+
+    <div class="section-heading">
+
+        <span>TRAVEL READINESS</span>
+
+        <h2>Are You Ready To Travel?</h2>
+
+        <p>
+            Complete your preparation checklist.
+        </p>
+
+    </div>
+
+
+    <div class="readiness-grid">
+
+
+        <!-- PACKING -->
+
+        <div class="dashboard-card checklist-card">
+
+            <div class="card-icon">
+                🎒
+            </div>
+
+            <h3>Packing Checklist</h3>
+
+            <label>
+                <input
+                    type="checkbox"
+                    class="packing-item">
+                Clothes
+            </label>
+
+            <label>
+                <input
+                    type="checkbox"
+                    class="packing-item">
+                Documents
+            </label>
+
+            <label>
+                <input
+                    type="checkbox"
+                    class="packing-item">
+                Charger
+            </label>
+
+            <label>
+                <input
+                    type="checkbox"
+                    class="packing-item">
+                Medicines
+            </label>
+
+            <label>
+                <input
+                    type="checkbox"
+                    class="packing-item">
+                Toiletries
+            </label>
+
+
+            <button onclick="checkPacking()">
+                Check Packing
+            </button>
+
+
+            <div
+                id="packingResult"
+                class="result-box">
+            </div>
+
+        </div>
+
+
+        <!-- SAFETY -->
+
+        <div class="dashboard-card checklist-card">
+
+            <div class="card-icon">
+                🛡️
+            </div>
+
+            <h3>Safety Readiness</h3>
+
+            <label>
+                <input
+                    type="checkbox"
+                    class="safety-item">
+                Emergency Contact
+            </label>
+
+            <label>
+                <input
+                    type="checkbox"
+                    class="safety-item">
+                ID Documents
+            </label>
+
+            <label>
+                <input
+                    type="checkbox"
+                    class="safety-item">
+                First Aid
+            </label>
+
+            <label>
+                <input
+                    type="checkbox"
+                    class="safety-item">
+                Travel Insurance
+            </label>
+
+
+            <button onclick="calculateSafety()">
+                Check Safety
+            </button>
+
+
+            <div
+                id="safetyResult"
+                class="result-box">
+            </div>
+
+        </div>
+
+
+        <!-- HEALTH -->
+
+        <div class="dashboard-card health-card">
+
+            <div class="card-icon">
+                ❤️
+            </div>
+
+            <h3>Trip Health Monitor</h3>
+
+            <p>
+                Overall preparation based on
+                packing and safety.
+            </p>
+
+
+            <div class="health-meter">
+
+                <div
+                    id="healthBar"
+                    class="health-bar">
+                </div>
+
+            </div>
+
+
+            <h2 id="healthPercentage">
+                0%
+            </h2>
+
+
+            <button onclick="checkTripHealth()">
+                Check Trip Health
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MY TRIPS ================= -->
+
+<section
+    class="dashboard-section"
+    id="trips">
+
+    <div class="section-heading">
+
+        <span>MY JOURNEYS</span>
+
+        <h2>Manage Your Trips</h2>
+
+    </div>
+
+
+    <div class="trip-manager">
+
+        <div class="dashboard-card trip-form">
+
+            <div class="card-icon">
+                ✈️
+            </div>
+
+            <h3>Add New Trip</h3>
+
+            <input
+                type="text"
+                id="tripName"
+                placeholder="Trip Name"
+            >
+
+            <input
+                type="text"
+                id="tripPlace"
+                placeholder="Destination"
+            >
+
+            <input
+                type="date"
+                id="tripDate"
+            >
+
+            <button onclick="addTrip()">
+                + Add Trip
+            </button>
+
+        </div>
+
+
+        <div class="trip-list-area">
+
+            <h3>🗺️ Your Saved Trips</h3>
+
+            <div id="tripList">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TRAVEL SCORE ================= -->
+
+<section class="dashboard-section">
+
+    <div class="section-heading">
+
+        <span>TRAVEL PERFORMANCE</span>
+
+        <h2>Your Travel Score</h2>
+
+    </div>
+
+
+    <div class="score-card">
+
+        <div class="score-circle">
+
+            <span id="scoreNumber">
+                0
+            </span>
+
+            <small>/100</small>
+
+        </div>
+
+
+        <div class="score-info">
+
+            <h3>Smart Travel Score</h3>
+
+            <p id="scoreMessage">
+                Complete your travel preparation
+                to calculate your score.
+            </p>
+
+
+            <button onclick="calculateTravelScore()">
+                Calculate My Score
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= JOURNAL ================= -->
+
+<section
+    class="dashboard-section"
+    id="journal">
+
+    <div class="section-heading">
+
+        <span>TRAVEL MEMORIES</span>
+
+        <h2>My Travel Journal</h2>
+
+        <p>
+            Save special moments from your journeys.
+        </p>
+
+    </div>
+
+
+    <div class="journal-layout">
+
+        <div class="dashboard-card">
+
+            <div class="card-icon">
+                📝
+            </div>
+
+            <h3>Add Memory</h3>
+
+            <input
+                type="text"
+                id="journalTitle"
+                placeholder="Memory Title"
+            >
+
+            <textarea
+                id="journalText"
+                placeholder="Write about your journey..."
+                rows="6">
+            </textarea>
+
+
+            <button onclick="saveJournal()">
+                💾 Save Memory
+            </button>
+
+        </div>
+
+
+        <div class="journal-list">
+
+            <h3>📸 Saved Memories</h3>
+
+            <div id="journalList">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EMERGENCY CARD ================= -->
+
+<section class="dashboard-section">
+
+    <div class="section-heading">
+
+        <span>TRAVEL SAFETY</span>
+
+        <h2>Emergency Travel Card</h2>
+
+    </div>
+
+
+    <div class="emergency-card">
+
+        <div class="emergency-icon">
+            🆘
+        </div>
+
+        <div class="emergency-content">
+
+            <h3>Quick Emergency Information</h3>
+
+            <p>
+                Keep important emergency information
+                ready during your journey.
+            </p>
+
+
+            <div class="emergency-form">
+
+                <input
+                    type="text"
+                    id="emergencyName"
+                    placeholder="Your Name"
+                >
+
+                <input
+                    type="text"
+                    id="emergencyContact"
+                    placeholder="Emergency Contact"
+                >
+
+                <input
+                    type="text"
+                    id="emergencyBlood"
+                    placeholder="Blood Group"
+                >
+
+            </div>
+
+
+            <button onclick="createEmergencyCard()">
+                Create Emergency Card
+            </button>
+
+
+            <div
+                id="emergencyResult">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="dashboard-footer">
+
+    <div>
+        🌍 <strong>Tour Tracker</strong>
+    </div>
+
+    <p>
+        Smart Travel • Smart Planning • Better Journeys
+    </p>
+
+    <small>
+        College Mini Project
+    </small>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
